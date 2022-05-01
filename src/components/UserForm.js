@@ -1,6 +1,8 @@
 import {Component} from 'react';
 import FormUserDetails from './FormUserDetails/FormUserDetails';
 import FormPersonalDetails from './FormPersonalDetails/FormPersonalDetails';
+import Confirm from './Confirm';
+import Success from './Success';
 
 export class UserForm extends Component {
   state = {
@@ -45,8 +47,12 @@ export class UserForm extends Component {
               handleChange = {this.handleChange}
               values = {values}
               />
-      case 3: return <h1>Confirm</h1>
-      case 4: return <h1>Success</h1>
+      case 3: return <Confirm
+              nextStep = {this.nextStep}
+              prevStep = {this.prevStep}
+              values = {values}
+              />
+      case 4: return <Success />
       default:
       return(
         <div>
